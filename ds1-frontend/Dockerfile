@@ -1,0 +1,12 @@
+FROM node:16 as build
+WORKDIR /app
+RUN npm install -g @angular/cli
+COPY ./ds1-frontend/package*.json /app/
+RUN npm install
+COPY ./ds1-frontend /app/
+RUN npm run build
+
+FROM nginx:1.17-alpine
+COPY ./ds1-frontend/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/dist/ds1-frontend /usr/share/nginx/html
+EXPOSE 80

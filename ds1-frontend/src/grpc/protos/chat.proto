@@ -1,0 +1,28 @@
+syntax="proto3";// syntax of the proto file (current version is 3)
+package proto.chat; // package where we will generate the file
+
+message ChatMessage{
+   string from = 1;
+   string msg = 2;
+   string to = 3;
+   bool typing = 4;
+   bool read = 5;
+}
+
+message Empty {}
+
+message UserInChat{
+	string username = 1;
+}
+
+message ReadMessage{
+  string from = 1;
+  string to = 2;
+  bool read = 3;
+}
+
+
+service ChatService {
+    rpc sendMsg(ChatMessage) returns (Empty) {}
+    rpc receiveMsg(UserInChat) returns (stream ChatMessage) {}
+}

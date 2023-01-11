@@ -1,0 +1,45 @@
+@import '../themes/theme';
+
+.accent-color{
+  color: $accent-color;
+}
+
+.primary-color{
+  color: $primary-color;
+}
+
+.warn-color{
+  color:$warn-color;
+}
+
+.full-height{
+  height: 100% !important;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.title{
+  color: $primary-color;
+}
+
+.background-primary{
+  background-color: $primary-color;
+}
+
+.background{
+  background-color: #9fa8da;
+}
+
+.search{
+  width: 98%;
+  height: 30px;
+}
+
+.paddings{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
